@@ -9,6 +9,7 @@ trigger:
 - master
 
 pool:
+
   vmImage: ubuntu-latest
 
 steps:
@@ -37,3 +38,9 @@ steps:
   inputs:
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+    
