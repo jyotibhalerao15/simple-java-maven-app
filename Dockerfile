@@ -11,3 +11,6 @@ COPY pom.xml ./
 COPY src ./src
 
 #CMD ["./mvnw", "spring-boot:run"]
+CMD ["echo","Hello Docker"]
+CMD ["echo","Hello world java"]
+CMD ["echo","Wrong param"]
